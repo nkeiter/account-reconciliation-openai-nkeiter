@@ -1,0 +1,12 @@
+# Restrict project indexing/scope to code and README only.
+# Keep Python files and README.txt; ignore all other files except csv, tsv, and txt files.
+**/*
+!*/
+!**/*.py
+!README.txt
+!*.txt
+!*.csv
+!*.tsv
+!.gitignore
+!.vscode/
+!.vscode/settings.json

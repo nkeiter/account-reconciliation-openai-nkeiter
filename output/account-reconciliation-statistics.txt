@@ -1,0 +1,70 @@
+Account Reconciliation Statistics
+Generated: 2026-04-15 11:15:49
+Total unique accounts merged: 12363
+Total alumni accounts: 4297
+Total campus accounts: 7948
+Total system accounts: 118
+Total enabled Entra Microsoft campus accounts: 6084
+Total enabled Entra Microsoft alumni accounts: 4286
+Total enabled PeopleSoft campus accounts: 5629
+Total enabled PeopleSoft alumni accounts: 12
+
+Error condition counts and percentages:
+- Error 1: enabled in PeopleSoft but disabled or does not exist in Entra Microsoft: 271 (3.41% of campus accounts)
+- Error 2: enabled in Entra Microsoft but disabled or does not exist in PeopleSoft: 726 (9.13% of campus accounts)
+- Error 3: campus account enabled in both PeopleSoft and Entra Microsoft but unused in Entra Microsoft (6 months): 902 (11.35% of campus accounts)
+- Error 4: campus account enabled in both PeopleSoft and Entra Microsoft but unused in Entra Microsoft (12 months): 651 (8.19% of campus accounts)
+- Error 5: alumni account unused in Entra Microsoft (6 months): 2900 (67.49% of alumni accounts)
+- Error 6: alumni account unused in Entra Microsoft (12 months): 2288 (53.25% of alumni accounts)
+- Error 7: campus account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): 374 (6.15% of enabled Entra Microsoft campus accounts)
+- Error 8: alumni account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): 267 (6.23% of enabled Entra Microsoft alumni accounts)
+- Error 9: campus account enabled in PeopleSoft but never used (missing PeopleSoft last login date): 200 (3.55% of enabled PeopleSoft campus accounts)
+- Error 10: alumni account enabled in PeopleSoft but never used (missing PeopleSoft last login date): 0 (0.00% of enabled PeopleSoft alumni accounts)
+
+Days since last login statistics for (Entra Microsoft) campus accounts not used in 6 months (Error 3):
+- Total campus accounts: 7948
+- Error 3 accounts analyzed: 902
+- Percent of campus accounts unused in Entra Microsoft: 11.35%
+- Error 3 accounts with missing Entra Microsoft login date: 136
+- Mean days since Entra Microsoft login: 582.54
+- Median days since Entra Microsoft login: 514.00
+- Mode days since Entra Microsoft login: 436, 330, 202, 348
+- Min days since Entra Microsoft login: 184
+- Max days since Entra Microsoft login: 1410
+- Standard deviation of days since Entra Microsoft login: 313.98
+
+Days since last login statistics for (Entra Microsoft) campus accounts not used in 12 months (Error 4):
+- Total campus accounts: 7948
+- Error 4 accounts analyzed: 651
+- Percent of campus accounts unused in Entra Microsoft: 8.19%
+- Error 4 accounts with missing Entra Microsoft login date: 136
+- Mean days since Entra Microsoft login: 735.50
+- Median days since Entra Microsoft login: 679.00
+- Mode days since Entra Microsoft login: 436
+- Min days since Entra Microsoft login: 366
+- Max days since Entra Microsoft login: 1410
+- Standard deviation of days since Entra Microsoft login: 271.81
+
+Days since last login statistics for (Entra Microsoft) alumni accounts not used in 6 months (Error 5):
+- Total alumni accounts: 4297
+- Error 5 accounts analyzed: 2900
+- Percent of alumni accounts unused in Entra Microsoft: 67.49%
+- Error 5 accounts with missing Entra Microsoft login date: 277
+- Mean days since Entra Microsoft login: 819.16
+- Median days since Entra Microsoft login: 759.00
+- Mode days since Entra Microsoft login: 1290
+- Min days since Entra Microsoft login: 184
+- Max days since Entra Microsoft login: 2170
+- Standard deviation of days since Entra Microsoft login: 442.73
+
+Days since last login statistics for (Entra Microsoft) alumni accounts not used in 12 months (Error 6):
+- Total alumni accounts: 4297
+- Error 6 accounts analyzed: 2288
+- Percent of alumni accounts unused in Entra Microsoft: 53.25%
+- Error 6 accounts with missing Entra Microsoft login date: 277
+- Mean days since Entra Microsoft login: 984.90
+- Median days since Entra Microsoft login: 995.00
+- Mode days since Entra Microsoft login: 1290
+- Min days since Entra Microsoft login: 366
+- Max days since Entra Microsoft login: 2170
+- Standard deviation of days since Entra Microsoft login: 370.31
