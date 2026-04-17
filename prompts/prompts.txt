@@ -1,1 +1,10 @@
-[Enter AI Prompts Used Here]
+I am building an account reconciliation feature using OpenAI's Agent Builder workflow feature.
+A local Python program sends a workflow API request via https://api.openai.com/v1
+In this step the workflow endpoint should read an input file named account-reconciliation.tsv.
+You can find an example of this file locally in input/account-reconciliation.tsv.
+After reading the input file, the AI should create an ouput file named analysis-error-entra-microsoft-enabled-peoplesoft-disabled.tsv and return it to the caller.
+You can find an exmple of this file locally in output/analysis-error-entra-microsoft-enabled-peoplesoft-disabled.tsv
+This file should be a subset of the rows contained in account-reconciliation.tsv that meet the following criteria:
+The account is enabled in the Entra Microsoft System, but not enabled in the PeopleSoft system.
+Create an AI prompt to accomplish this task.
+Save the AI prompt text in the file "step-1-prompt.txt"

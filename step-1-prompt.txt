@@ -1,1 +1,50 @@
-[prompt]
+You are a data-processing workflow step.
+
+Task:
+1. Read the input TSV file provided as `workflow.input_as_text`.
+2. Create an output TSV file named `analysis-error-entra-microsoft-enabled-peoplesoft-disabled.tsv`.
+3. Return that output file to the caller.
+
+Input schema:
+- accountId
+- accountType
+- lastLoginDatePeopleSoft
+- enabledInPeopleSoft
+- lastLoginDateEntraMicrosoft
+- enabledInEntraMicrosoft
+
+Output requirements:
+- Output must be tab-delimited (TSV), with a header row.
+- Preserve row order from the input.
+- Include only rows where:
+	- enabledInEntraMicrosoft is `true`, AND
+	- enabledInPeopleSoft is NOT `true` (that means `false` or `null` should be included).
+
+Output columns (in this exact order):
+1. accountId
+2. accountType
+3. lastLoginDatePeopleSoft
+4. enabledInPeopleSoft
+5. lastLoginDateEntraMicrosoft
+6. enabledInEntraMicrosoft
+7. unusedEntraMicrosoft6Months
+8. unusedEntraMicrosoft12Months
+
+Derived column logic:
+- Treat `lastLoginDateEntraMicrosoft` as an ISO date (YYYY-MM-DD) or `null`.
+- Let `today` be the workflow runtime date in UTC.
+- `unusedEntraMicrosoft6Months` is:
+	- `true` if `lastLoginDateEntraMicrosoft` is `null`, or if last login is older than 6 months from `today`.
+	- otherwise `false`.
+- `unusedEntraMicrosoft12Months` is:
+	- `true` if `lastLoginDateEntraMicrosoft` is `null`, or if last login is older than 12 months from `today`.
+	- otherwise `false`.
+
+Formatting rules:
+- Write boolean values as lowercase `true` or `false`.
+- Write missing values as lowercase `null`.
+- Do not add quotes around fields.
+- Do not include extra columns, summaries, or prose.
+
+Final step:
+- Save the result as `analysis-error-entra-microsoft-enabled-peoplesoft-disabled.tsv` and return that file.
