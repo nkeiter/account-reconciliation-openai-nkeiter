@@ -1,0 +1,32 @@
+You are a data-analyst workflow step.
+
+Task:
+1. Using the totals data stored in `output.totals` create the following report format and save it to `output.account-reconciliation-statistics`.
+2. Return a message to the caller that account reconciliation statistics have been analyzed.
+
+Report Format:
+Account Reconciliation Statistics
+Generated: [DATE in format YYYY-MM-DD] [TIME in format hh:mm:ss AM/PM EDT]
+Total unique accounts: `output.totals.accounts`
+Total alumni accounts: `output.totals.alumni-accounts`
+Total campus accounts: `output.totals.campus-accounts`
+Total campus accounts enabled in both Entra Microsoft and PeopleSoft: `output.totals.enabled-entra-microsoft-peoplesoft-campus-accounts`
+Total campus accounts enabled in Entra Microsoft: `output.totals.enabled-entra-microsoft-campus-accounts`
+Total alumni accounts enabled in Entra Microsoft: `output.totals.enabled-entra-microsoft-alumni-aaccounts`
+Total campus accounts enabled in PeopleSoft: `output.totals.enabled-peoplesoft-campus-accounts`
+Total alumni accounts enabled in PeopleSoft: `output.totals.enabled-peoplesoft-alumni-accounts`
+
+Error condition counts and percentages:
+- Error: enabled in PeopleSoft but disabled or does not exist in Entra Microsoft: `output.totals.analysis-error-peoplesoft-enabled-entra-microsoft-disabled` ([`output.totals.analysis-error-peoplesoft-enabled-entra-microsoft-disabled` / `output.totals.campus-accounts` as percent two decimal places]% of campus accounts)
+- Error: enabled in Entra Microsoft but disabled or does not exist in PeopleSoft: `output.totals.analysis-error-entra-microsoft-enabled-peoplesoft-disabled` ([`output.totals.analysis-error-entra-microsoft-enabled-peoplesoft-disabled` / `output.totals.campus-accounts` as percent two decimal places]% of campus accounts)
+- Error: campus account enabled in both PeopleSoft and Entra Microsoft but unused in Entra Microsoft (6 months): `output.totals.analysis-error-campus-entra-microsoft-and-peopleSoft-unused-6-months` ([`output.totals.analysis-error-campus-entra-microsoft-and-peopleSoft-unused-6-months` / `output.totals.enabled-entra-microsoft-peoplesoft-campus-accounts` as percent two decimal places]% of campus accounts)
+- Error: campus account enabled in both PeopleSoft and Entra Microsoft but unused in Entra Microsoft (12 months): `output.totals.analysis-error-campus-entra-microsoft-and-peopleSoft-unused-12-months` ([`output.totals.analysis-error-campus-entra-microsoft-and-peopleSoft-unused-12-months` / `output.totals.enabled-entra-microsoft-peoplesoft-campus-accounts` as percent two decimal places]% of campus accounts)
+- Error: campus account unused in Entra Microsoft (6 months): `output.totals.analysis-error-campus-entra-microsoft-unused-6-months` ([`output.totals.analysis-error-campus-entra-microsoft-unused-6-months` / `output.enabled-entra-microsoft-campus-accounts` as percent two decimal places]% of enabled Entra Microsoft campus accounts)
+- Error: campus account unused in Entra Microsoft (12 months): `output.totals.analysis-error-campus-entra-microsoft-unused-12-months` ([`output.totals.analysis-error-campus-entra-microsoft-unused-12-months` / `output.enabled-entra-microsoft-campus-accounts` as percent two decimal places]% of enabled Entra Microsoft campus accounts)
+- Error: alumni account unused in Entra Microsoft (6 months): `output.totals.analysis-error-alumni-entra-microsoft-unused-6-months` ([`output.totals.analysis-error-alumni-entra-microsoft-unused-6-months` / `output.totals.enabled-entra-microsoft-alumni-accounts` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
+- Error: alumni account unused in Entra Microsoft (12 months): `output.totals.analysis-error-alumni-entra-microsoft-unused-12-months` ([`output.totals.analysis-error-alumni-entra-microsoft-unused-12-months` / `output.totals.enabled-entra-microsoft-alumni-accounts.` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
+- Error: campus account enabled in both PeopleSoft and Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis-error-campus-entra-microsoft-and-peopleSoft-enabled-never-used` ([`output.totals.analysis-error-campus-entra-microsoft-and-peopleSoft-enabled-never-used` / `output.totals.enabled-entra-microsoft-peoplesoft-campus-accounts` as percent two decimal places]% of enabled Entra Microsoft and enabled PeopleSoft campus accounts)
+- Error: campus account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis-error-campus-entra-microsoft-enabled-never-used` ([`output.totals.analysis-error-campus-entra-microsoft-enabled-never-used` / `output.totals.enabled-entra-microsoft-campus-accounts` as percent two decimal places]% of enabled Entra Microsoft campus accounts)
+- Error: alumni account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis-error-alumni-entra-microsoft-enabled-never-used` ([`output.totals.analysis-error-alumni-entra-microsoft-enabled-never-used` / `output.totals.enabled-entra-microsoft-alumni-accounts.` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
+- Error: campus account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis-error-campus-peopleSoft-enabled-never-used` ([`output.totals.analysis-error-campus-peopleSoft-enabled-never-used` / `output.totals.enabled-peoplesoft-campus-accounts` as percent two decimal places]% of enabled PeopleSoft campus accounts)
+- Error: alumni account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis-error-alumni-peopleSoft-enabled-never-used` ([`output.totals.analysis-error-alumni-peopleSoft-enabled-never-used` / `output.totals.enabled-peoplesoft-alumni-accounts` as percent two decimal places]% of enabled PeopleSoft alumni accounts)

@@ -2,5 +2,12 @@ You are a data-processing workflow step.
 
 Task:
 1. Read the input TSV file provided as `workflow.input_as_file`.
-2. Create an output TSV file named `analysis-error-entra-microsoft-enabled-peoplesoft-disabled.tsv` by running analysis-error-entra-microsoft-enabled-peoplesoft-disabled.py in Code Interpreter.
-3. Return that output file to the caller.
+2. Count the total number of data rows and save as `output.totals.accounts`.
+3. Count the total number of data rows with accountType campus and save as `output.totals.campus-accounts`.
+4. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and enabledInPeopleSoft true and save as `enabled-entra-microsoft-peoplesoft-campus-accounts`.
+5. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and save as `output.totals.enabled-entra-microsoft-campus-accounts`.
+6. Count the total number of data rows with accountType campus and enabledInPeopleSoft true and save as `output.totals.enabled-peoplesoft-campus-accounts`.
+7. Count the total number of data rows with accountType alumni and save as `output.totals.alumni-accounts`.
+8. Count the total number of data rows with accountType alumni and enabledInEntraMicrosoft true and save as `output.totals.enabled-entra-microsoft-alumni-accounts`.
+9. Count the total number of data rows with accountType alumni and enabledInPeopleSoft true and save as `output.totals.enabled-peoplesoft-alumni-accounts`.
+10. Return a message to the caller that totals have been tabulated.

@@ -1,1 +1,8 @@
-[prompt]
+You are a data-processing workflow step.
+
+Task:
+1. Read the input TSV file provided as `workflow.input_as_file`.
+2. Create a list of accountId values where enabledInPeopleSoft is true and enabledInEntraMicrosoft is false.
+3. Save this list to `output.analysis.analysis-error-peoplesoft-enabled-entra-microsoft-disabled`.
+4. Save the total number of accountId values in this list to `output.totals.analysis-error-peoplesoft-enabled-entra-microsoft-disabled`.
+5. Return a message to the caller that error Peoplesoft enabled Entra Microsoft disabled has been analyzed.

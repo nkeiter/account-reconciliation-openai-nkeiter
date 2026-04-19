@@ -1,1 +1,8 @@
-[prompt]
+You are a data-processing workflow step.
+
+Task:
+1. Read the input TSV file provided as `workflow.input_as_file`.
+2. Create a list of accountId values where accountType is alumni and enabledInPeopleSoft is true and neverUsedPeopleSoft is true.
+3. Save this list to `output.analysis.analysis-error-alumni-peopleSoft-enabled-never-used`.
+4. Save the total number of accountId values in this list to `output.totals.analysis-error-alumni-peopleSoft-enabled-never-used`.
+5. Return a message to the caller that error alumni PeopleSoft enabled never used has been analyzed.
