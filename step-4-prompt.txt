@@ -1,7 +1,8 @@
 You are a data-processing workflow step.
 
 Task:
-1. Read the input TSV file provided as `workflow.input_as_file`.
+1. Read the input TSV file provided as `workflow.input_as_file`. This is a tab delimited data file with the following headers:
+accountType accountId enabledInPeopleSoft enabledInEntraMicrosoft unusedEntraMicrosoft6Months unusedEntraMicrosoft12Months neverUsedEntraMicrosoft neverUsedPeopleSoft
 2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and neverUsedEntraMicrosoft is true.
 3. Save this list to `output.analysis.analysis-error-campus-entra-microsoft-enabled-never-used`.
 4. Save the total number of accountId values in this list to `output.totals.analysis-error-campus-entra-microsoft-enabled-never-used`.
