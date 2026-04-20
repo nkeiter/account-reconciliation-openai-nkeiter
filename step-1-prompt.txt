@@ -1,14 +1,13 @@
-You are a data-processing workflow step.
+You are a data processing workflow step.
 
 Task:
-1. Read the input TSV file provided as `workflow.input_as_file`. This is a tab delimited data file with the following headers:
-accountType accountId enabledInPeopleSoft enabledInEntraMicrosoft unusedEntraMicrosoft6Months unusedEntraMicrosoft12Months neverUsedEntraMicrosoft neverUsedPeopleSoft
+1. Read the input file provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
 2. Count the total number of data rows and save as `output.totals.accounts`.
-3. Count the total number of data rows with accountType campus and save as `output.totals.campus-accounts`.
-4. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and enabledInPeopleSoft true and save as `enabled-entra-microsoft-peoplesoft-campus-accounts`.
-5. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and save as `output.totals.enabled-entra-microsoft-campus-accounts`.
-6. Count the total number of data rows with accountType campus and enabledInPeopleSoft true and save as `output.totals.enabled-peoplesoft-campus-accounts`.
-7. Count the total number of data rows with accountType alumni and save as `output.totals.alumni-accounts`.
-8. Count the total number of data rows with accountType alumni and enabledInEntraMicrosoft true and save as `output.totals.enabled-entra-microsoft-alumni-accounts`.
-9. Count the total number of data rows with accountType alumni and enabledInPeopleSoft true and save as `output.totals.enabled-peoplesoft-alumni-accounts`.
-10. Return a message to the caller that totals have been tabulated.
+3. Count the total number of data rows with accountType campus and save as `output.totals.campus_accounts`.
+4. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and enabledInPeopleSoft true and save as `output.totals.enabled_entra_microsoft_peoplesoft_campus_accounts`.
+5. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and save as `output.totals.enabled_entra_microsoft_campus_accounts`.
+6. Count the total number of data rows with accountType campus and enabledInPeopleSoft true and save as `output.totals.enabled_peoplesoft_campus_accounts`.
+7. Count the total number of data rows with accountType alumni and save as `output.totals.alumni_accounts`.
+8. Count the total number of data rows with accountType alumni and enabledInEntraMicrosoft true and save as `output.totals.enabled_entra_microsoft_alumni_accounts`.
+9. Count the total number of data rows with accountType alumni and enabledInPeopleSoft true and save as `output.totals.enabled_peoplesoft_alumni_accounts`.
+10. Append the `output.messages` array with the message "Totals have been tabulated."

@@ -7,6 +7,7 @@
 !*.txt
 !*.csv
 !*.tsv
+!*.json
 !.gitignore
 !.vscode/
 !.vscode/settings.json

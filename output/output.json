@@ -1,0 +1,87 @@
+{
+  "name": "output",
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Text message from the model."
+      },
+      "description": "Text messages from the model."
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Error message from the model."
+      },
+      "description": "Error messages from the model."
+    },
+    "analysis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Analysis variables containing lists of accountId.",
+      "default": [
+        "analysis_error_entra_microsoft_enabled_peoplesoft_disabled",
+        "analysis_error_peoplesoft_enabled_entra_microsoft_disabled",
+        "analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used",
+        "analysis_error_campus_entra_microsoft_and_peopleSoft_unused_6_months",
+        "analysis_error_campus_entra_microsoft_and_peopleSoft_unused_12_months",
+        "analysis_error_campus_entra_microsoft_enabled_never_used",
+        "analysis_error_campus_peopleSoft_enabled_never_used",
+        "analysis_error_campus_entra_microsoft_unused_6_months",
+        "analysis_error_campus_entra_microsoft_unused_12_months",
+        "analysis_error_alumni_entra_microsoft_enabled_never_used",
+        "analysis_error_alumni_peopleSoft_enabled_never_used",
+        "analysis_error_alumni_entra_microsoft_unused_6_months",
+        "analysis_error_alumni_entra_microsoft_unused_12_months"
+      ]
+    },
+    "totals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Analysis variables containing totals.",
+      "default": [
+        "accounts",
+        "campus_accounts",
+        "enabled_entra_microsoft_peoplesoft_campus_accounts",
+        "enabled_entra_microsoft_campus_accounts",
+        "enabled_peoplesoft_campus_accounts",
+        "alumni_accounts",
+        "enabled_entra_microsoft_alumni_accounts",
+        "enabled_peoplesoft_alumni_accounts",
+        "analysis_error_entra_microsoft_enabled_peoplesoft_disabled",
+        "analysis_error_peoplesoft_enabled_entra_microsoft_disabled",
+        "analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used",
+        "analysis_error_campus_entra_microsoft_and_peopleSoft_unused_6_months",
+        "analysis_error_campus_entra_microsoft_and_peopleSoft_unused_12_months",
+        "analysis_error_campus_entra_microsoft_enabled_never_used",
+        "analysis_error_campus_peopleSoft_enabled_never_used",
+        "analysis_error_campus_entra_microsoft_unused_6_months",
+        "analysis_error_campus_entra_microsoft_unused_12_months",
+        "analysis_error_alumni_entra_microsoft_enabled_never_used",
+        "analysis_error_alumni_peopleSoft_enabled_never_used",
+        "analysis_error_alumni_entra_microsoft_unused_6_months",
+        "analysis_error_alumni_entra_microsoft_unused_12_months"
+      ]
+    },
+    "account_reconciliation_statistics": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "messages",
+    "errors",
+    "analysis",
+    "totals",
+    "account_reconciliation_statistics"
+  ],
+  "title": "output"
+}
