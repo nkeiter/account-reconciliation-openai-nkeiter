@@ -1,0 +1,138 @@
+﻿You are a data processing and data analyst workflow step. 
+Feel free to write your own Python program or Shell script if needed to help you accomplish this task.
+You may complete these steps in any order that makes the most logical sense.
+However step 15 requires all the data from the first 14 steps to be in place before it can be run.
+Step 15 is a reporting step that relies on the data gathered from the first 14 steps. 
+Step 1
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Count the total number of data rows and save as `output.totals.accounts`.
+3. Count the total number of data rows with accountType campus and save as `output.totals.campus_accounts`.
+4. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and enabledInPeopleSoft true and save as `output.totals.enabled_entra_microsoft_peoplesoft_campus_accounts`.
+5. Count the total number of data rows with accountType campus and enabledInEntraMicrosoft true and save as `output.totals.enabled_entra_microsoft_campus_accounts`.
+6. Count the total number of data rows with accountType campus and enabledInPeopleSoft true and save as `output.totals.enabled_peoplesoft_campus_accounts`.
+7. Count the total number of data rows with accountType alumni and save as `output.totals.alumni_accounts`.
+8. Count the total number of data rows with accountType alumni and enabledInEntraMicrosoft true and save as `output.totals.enabled_entra_microsoft_alumni_accounts`.
+9. Count the total number of data rows with accountType alumni and enabledInPeopleSoft true and save as `output.totals.enabled_peoplesoft_alumni_accounts`.
+10. Append the `output.messages` array with the message "Totals have been tabulated."
+Step 2 
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where enabledInEntraMicrosoft is true and enabledInPeopleSoft is false.
+3. Save this list to `output.analysis.analysis_error_entra_microsoft_enabled_peoplesoft_disabled`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_entra_microsoft_enabled_peoplesoft_disabled`.
+5. Append the `output.messages` array with the message "Error Entra Microsoft enabled Peoplesoft disabled has been analyzed."
+Step 3
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where enabledInPeopleSoft is true and enabledInEntraMicrosoft is false.
+3. Save this list to `output.analysis.analysis_error_peoplesoft_enabled_entra_microsoft_disabled`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_peoplesoft_enabled_entra_microsoft_disabled`.
+5. Append the `output.messages` array with the message "Error Peoplesoft enabled Entra Microsoft disabled has been analyzed."
+Step 4
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and neverUsedEntraMicrosoft is true.
+3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_enabled_never_used`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_enabled_never_used`.
+5. Append the `output.messages` array with the message "Error campus Entra Microsoft enabled never used has been analyzed."
+Step 5
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInPeopleSoft is true and neverUsedPeopleSoft is true.
+3. Save this list to `output.analysis.analysis_error_campus_peopleSoft_enabled_never_used`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_peopleSoft_enabled_never_used`.
+5. Append the `output.messages` array with the message "Error campus PeopleSoft enabled never used has been analyzed."
+Step 6
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and unusedEntraMicrosoft6Months is true.
+3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_unused_6_months`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_unused_6_months`.
+5. Append the `output.messages` array with the message "Error campus Entra Microsoft unused 6 months has been analyzed."
+Step 7
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and unusedEntraMicrosoft12Months is true.
+3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_unused_12_months`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_unused_12_months`.
+5. Append the `output.messages` array with the message "Error campus Entra Microsoft unused 12 months has been analyzed."
+Step 8
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is alumni and enabledInEntraMicrosoft is true and neverUsedEntraMicrosoft is true.
+3. Save this list to `output.analysis.analysis_error_alumni_entra_microsoft_enabled_never_used`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_alumni_entra_microsoft_enabled_never_used`.
+5. Append the `output.messages` array with the message "Error alumni Entra Microsoft enabled never used has been analyzed."
+Step 9
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is alumni and enabledInPeopleSoft is true and neverUsedPeopleSoft is true.
+3. Save this list to `output.analysis.analysis_error_alumni_peopleSoft_enabled_never_used`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_alumni_peopleSoft_enabled_never_used`.
+5. Append the `output.messages` array with the message "Error alumni PeopleSoft enabled never used has been analyzed."
+Step 10
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is alumni and enabledInEntraMicrosoft is true and unusedEntraMicrosoft6Months is true.
+3. Save this list to `output.analysis.analysis_error_alumni_entra_microsoft_unused_6_months`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_alumni_entra_microsoft_unused_6_months`.
+5. Append the `output.messages` array with the message "Error alumni Entra Microsoft unused 6 months has been analyzed."
+Step 11
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is alumni and enabledInEntraMicrosoft is true and unusedEntraMicrosoft12Months is true.
+3. Save this list to `output.analysis.analysis_error_alumni_entra_microsoft_unused_12_months`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_alumni_entra_microsoft_unused_12_months`.
+5. Append the `output.messages` array with the message "Error alumni Entra Microsoft unused 12 months has been analyzed."
+Step 12
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and enabledInPeopleSoft is true and neverUsedEntraMicrosoft is true.
+3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used`.
+5. Append the `output.messages` array with the message "Error campus Entra Microsoft enabled and PeopleSoft enabled never used has been analyzed."
+Step 13
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and enabledInPeopleSoft is true and unusedEntraMicrosoft6Months is true.
+3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_6_months`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_6_months`.
+5. Append the `output.messages` array with the message "Error campus Entra Microsoft enabled and PeopleSoft enabled unused 6 months has been analyzed."
+Step 14
+Task List:
+1. Read the input provided as comma delimited data with the following headers: accountType,accountId,enabledInPeopleSoft,enabledInEntraMicrosoft,unusedEntraMicrosoft6Months,unusedEntraMicrosoft12Months,neverUsedEntraMicrosoft,neverUsedPeopleSoft
+2. Create a list of accountId values where accountType is campus and enabledInEntraMicrosoft is true and enabledInPeopleSoft is true and unusedEntraMicrosoft12Months is true.
+3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_12_months`.
+4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_12_months`.
+5. Append the `output.messages` array with the message "Error campus Entra Microsoft enabled and PeopleSoft enabled unused 12 months has been analyzed."
+Step 15
+Task List:
+1. Using the totals data stored in `output.totals` create the following report format and save it to `output.account_reconciliation_statistics`.
+2. Append the `output.messages` array with the message "Account reconciliation statistics have been analyzed."
+Report Format:
+Account Reconciliation Statistics
+Generated: [DATE in format YYYY-MM-DD] [TIME in format hh:mm:ss AM/PM EDT]
+Total unique accounts: `output.totals.accounts`
+Total alumni accounts: `output.totals.alumni_accounts`
+Total campus accounts: `output.totals.campus_accounts`
+Total campus accounts enabled in both Entra Microsoft and PeopleSoft: `output.totals.enabled_entra_microsoft_peoplesoft_campus_accounts`
+Total campus accounts enabled in Entra Microsoft: `output.totals.enabled_entra_microsoft_campus_accounts`
+Total alumni accounts enabled in Entra Microsoft: `output.totals.enabled_entra_microsoft_alumni_aaccounts`
+Total campus accounts enabled in PeopleSoft: `output.totals.enabled_peoplesoft_campus_accounts`
+Total alumni accounts enabled in PeopleSoft: `output.totals.enabled_peoplesoft_alumni_accounts`
+
+Error condition counts and percentages:
+Error: enabled in PeopleSoft but disabled or does not exist in Entra Microsoft: `output.totals.analysis_error_peoplesoft_enabled_entra_microsoft_disabled` ([`output.totals.analysis_error_peoplesoft_enabled_entra_microsoft_disabled` / `output.totals.campus_accounts` as percent two decimal places]% of campus accounts)
+Error: enabled in Entra Microsoft but disabled or does not exist in PeopleSoft: `output.totals.analysis_error_entra_microsoft_enabled_peoplesoft_disabled` ([`output.totals.analysis_error_entra_microsoft_enabled_peoplesoft_disabled` / `output.totals.campus_accounts` as percent two decimal places]% of campus accounts)
+Error: campus account enabled in both PeopleSoft and Entra Microsoft but unused in Entra Microsoft (6 months): `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_6_months` ([`output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_6_months` / `output.totals.enabled_entra_microsoft_peoplesoft_campus_accounts` as percent two decimal places]% of enabled Entra Microsoft and enabled PeopleSoft campus accounts)
+Error: campus account enabled in both PeopleSoft and Entra Microsoft but unused in Entra Microsoft (12 months): `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_12_months` ([`output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_unused_12_months` / `output.totals.enabled_entra_microsoft_peoplesoft_campus_accounts` as percent two decimal places]% of enabled Entra Microsoft and enabled PeopleSoft campus accounts)
+Error: campus account unused in Entra Microsoft (6 months): `output.totals.analysis_error_campus_entra_microsoft_unused_6_months` ([`output.totals.analysis_error_campus_entra_microsoft_unused_6_months` / `output.enabled_entra_microsoft_campus_accounts` as percent two decimal places]% of enabled Entra Microsoft campus accounts)
+Error: campus account unused in Entra Microsoft (12 months): `output.totals.analysis_error_campus_entra_microsoft_unused_12_months` ([`output.totals.analysis_error_campus_entra_microsoft_unused_12_months` / `output.enabled_entra_microsoft_campus_accounts` as percent two decimal places]% of enabled Entra Microsoft campus accounts)
+Error: alumni account unused in Entra Microsoft (6 months): `output.totals.analysis_error_alumni_entra_microsoft_unused_6_months` ([`output.totals.analysis_error_alumni_entra_microsoft_unused_6_months` / `output.totals.enabled_entra_microsoft_alumni_accounts` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
+Error: alumni account unused in Entra Microsoft (12 months): `output.totals.analysis_error_alumni_entra_microsoft_unused_12_months` ([`output.totals.analysis_error_alumni_entra_microsoft_unused_12_months` / `output.totals.enabled_entra_microsoft_alumni_accounts.` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
+Error: campus account enabled in both PeopleSoft and Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used` / `output.totals.enabled_entra_microsoft_peoplesoft_campus_accounts` as percent two decimal places]% of enabled Entra Microsoft and enabled PeopleSoft campus accounts)
+Error: campus account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis_error_campus_entra_microsoft_enabled_never_used` ([`output.totals.analysis_error_campus_entra_microsoft_enabled_never_used` / `output.totals.enabled_entra_microsoft_campus_accounts` as percent two decimal places]% of enabled Entra Microsoft campus accounts)
+Error: alumni account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis_error_alumni_entra_microsoft_enabled_never_used` ([`output.totals.analysis_error_alumni_entra_microsoft_enabled_never_used` / `output.totals.enabled_entra_microsoft_alumni_accounts.` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
+Error: campus account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis_error_campus_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_campus_peopleSoft_enabled_never_used` / `output.totals.enabled_peoplesoft_campus_accounts` as percent two decimal places]% of enabled PeopleSoft campus accounts)
+Error: alumni account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis_error_alumni_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_alumni_peopleSoft_enabled_never_used` / `output.totals.enabled_peoplesoft_alumni_accounts` as percent two decimal places]% of enabled PeopleSoft alumni accounts)
