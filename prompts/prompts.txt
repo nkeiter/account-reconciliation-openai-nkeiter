@@ -8,3 +8,5 @@ This file should be a subset of the rows contained in account-reconciliation.tsv
 The account is enabled in the Entra Microsoft System, but not enabled in the PeopleSoft system.
 Create an AI prompt to accomplish this task.
 Save the AI prompt text in the file "step-1-prompt.txt"
+
+Check the files step-1-* through step-15-* and look for the text "output.output."
