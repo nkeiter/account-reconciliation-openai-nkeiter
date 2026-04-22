@@ -21,3 +21,5 @@ saves a text copy of the instruction text for each node for the purpose of sourc
 
 Yes, give me a stricter version that de-duplicates shared boilerplate and merges only the task sections.
 
+I've edited the file manually to be exactly what I want can we make the script preserve this format?
+

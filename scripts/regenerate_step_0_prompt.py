@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT_FILE = ROOT / "step-0-prompt.txt"
 COMMON_TASK_LINE = "Perform the following tasks by using the mounted CSV file."
+MERGED_HEADING = "## Merged Tasks (from steps 1 through 15)"
 
 def read_required_step_file(step: int) -> str:
     p = ROOT / f"step-{step}-prompt.txt"
@@ -15,15 +16,14 @@ def read_required_step_file(step: int) -> str:
     return p.read_text(encoding="utf-8")
 
 def extract_tasks_section(step: int, text: str) -> str:
-    # Strict: require exact "## Step N Tasks" heading
     heading = f"## Step {step} Tasks"
     start = text.find(heading)
     if start == -1:
-        raise ValueError(f"Could not find required heading '{heading}'")
+        raise ValueError(f"Could not find required heading '{heading}' in step-{step}-prompt.txt")
 
     tasks_block = text[start:].rstrip()
 
-    # Keep only this tasks section (until next level-2 heading, if any)
+    # Keep only this step section up to next level-2 heading.
     m = re.search(r"\n##\s+.+", tasks_block[len(heading):])
     if m:
         cutoff = len(heading) + m.start()
@@ -39,7 +39,6 @@ def strip_common_instruction_and_renumber(tasks_block: str) -> str:
     heading = lines[0]
     body = lines[1:]
 
-    # Remove repeated "Perform..." line variants.
     filtered: list[str] = []
     for line in body:
         stripped = line.strip()
@@ -48,7 +47,6 @@ def strip_common_instruction_and_renumber(tasks_block: str) -> str:
             continue
         filtered.append(line)
 
-    # Renumber top-level ordered list items sequentially.
     renumbered: list[str] = []
     n = 1
     for line in filtered:
@@ -61,31 +59,44 @@ def strip_common_instruction_and_renumber(tasks_block: str) -> str:
 
     return "\n".join([heading, *renumbered]).rstrip()
 
-def build_merged_prompt(tasks_by_step: dict[int, str]) -> str:
-    # ...existing code...
+def split_template_step0(text: str) -> tuple[str, str]:
+    """
+    Returns:
+      preamble_through_heading: everything up to and including MERGED_HEADING line
+      common_line: preserved common task instruction line if present; otherwise default
+    """
+    idx = text.find(MERGED_HEADING)
+    if idx == -1:
+        raise ValueError(f"'{MERGED_HEADING}' not found in step-0-prompt.txt")
+
+    pre = text[:idx].rstrip("\n")
+    after = text[idx + len(MERGED_HEADING):]
+
+    # Preserve the first non-empty line after heading as common task line if it matches expectation.
+    common_line = COMMON_TASK_LINE
+    for raw in after.splitlines():
+        candidate = raw.strip()
+        if not candidate:
+            continue
+        if candidate == COMMON_TASK_LINE:
+            common_line = candidate
+        break
+
+    preamble_through_heading = f"{pre}\n{MERGED_HEADING}"
+    return preamble_through_heading, common_line
+
+def build_from_existing_template(tasks_by_step: dict[int, str]) -> str:
+    existing = OUT_FILE.read_text(encoding="utf-8") if OUT_FILE.exists() else ""
+    if not existing:
+        raise FileNotFoundError(
+            "step-0-prompt.txt not found. Create it first (with desired boilerplate format), then rerun."
+        )
+
+    preamble_through_heading, common_line = split_template_step0(existing)
+
     lines: list[str] = [
-        "You are a data processing workflow step.",
-        "You are step 0 in the workflow sequence, an all-in-one merged step of steps 1 through 15.",
-        "## Important",
-        "First, check the mounted TXT file to see if any helper scripts exist yet.",
-        "    General file processing helper scripts should be located under the heading \"Generic file processing code with file read loops and filter method hooks\".",
-        "    Scripts specific to step 0 should be located under the heading \"Step 0\".",
-        "    If no helper scripts exist yet, feel free to write your own Python scripts or Shell script if needed to help you accomplish your tasks.",
-        "    If helper scripts do exist, feel free to improve them if needed to help you accomplish your tasks.",
-        "For persistence accross workflow runs, you must save any scripts you create or improve.",
-        "    Save general file processing helper scripts you create or improve to `output.scripts.file-processing-code`",
-        "    Save any task helper scripts you create or improve to `output.scripts.step-0-code`",
-        "    The program that ran this workflow will save those scripts when it receives the return output.",
-        "You have 29 minutes to complete your tasks, set a timer and be aware of the time.",
-        "    This is because OpenAI has set a 30 minute limit on workflow processing tasks.",
-        "    If you run out of time:",
-        "        Append a message to the `output.errors` array with the message \"Task exeeded 29 minutes.\"",
-        "        Be sure to save any scripts you created.",
-        "        Stop processing tasks immediately so the output object can be returned to the program that ran this workflow.",
-        "        Saving the scripts and returning the output object before time runs out is very important because it will help this workflow step run faster next time.",
-        "",
-        "## Merged Tasks (from steps 1 through 15)",
-        COMMON_TASK_LINE,
+        preamble_through_heading,
+        common_line,
         "",
     ]
 
@@ -103,7 +114,7 @@ def main() -> None:
         tasks = extract_tasks_section(step, text)
         tasks_by_step[step] = strip_common_instruction_and_renumber(tasks)
 
-    merged = build_merged_prompt(tasks_by_step)
+    merged = build_from_existing_template(tasks_by_step)
     OUT_FILE.write_text(merged, encoding="utf-8")
     print(f"Generated: {OUT_FILE}")
 
