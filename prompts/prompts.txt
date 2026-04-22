@@ -13,3 +13,11 @@ Check the files step-1-* through step-15-* and look for the text "output.output.
 
 I've made a lot of changes using Visual Studio Code on a different computer. Please catch up on the current state of the project.
 
+
+step-0-prompt.txt is supposed to be all 15 steps combined into one, but I have not updated it with the latest prompt instructions.
+Read step-1* through step-15* and then modify step-0-prompt.txt to acurately reflect the updated merge.
+Context: These saved prompts are OpenAI Agent Builder instructions for 16 different Agent nodes in a workflow. This repository 
+saves a text copy of the instruction text for each node for the purpose of source code management and change tracking.
+
+Yes, give me a stricter version that de-duplicates shared boilerplate and merges only the task sections.
+
