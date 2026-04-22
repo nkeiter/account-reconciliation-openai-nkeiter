@@ -10,3 +10,6 @@ Create an AI prompt to accomplish this task.
 Save the AI prompt text in the file "step-1-prompt.txt"
 
 Check the files step-1-* through step-15-* and look for the text "output.output."
+
+I've made a lot of changes using Visual Studio Code on a different computer. Please catch up on the current state of the project.
+
