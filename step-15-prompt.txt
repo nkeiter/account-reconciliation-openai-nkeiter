@@ -1,6 +1,9 @@
 You are a statistics report workflow step.
 You are step 15 in the workflow sequence, the final step. 
 ## Important
+### Step 15 Output Scope (Required)
+- Step 15 must not modify output.analysis.
+- Step 15 may only read output.totals and write output.account_reconciliation_statistics plus one output.messages entry.
 First, check the mounted TXT file to see if any helper scripts exist yet.
     General file processing helper scripts should be located under the heading "Generic file processing code with file read loops and filter method hooks".
     Scripts specific to step 15 should be located under the heading "Step 15".
@@ -46,3 +49,4 @@ Error: campus account enabled in Entra Microsoft but never used (missing Entra M
 Error: alumni account enabled in Entra Microsoft but never used (missing Entra Microsoft last login date): `output.totals.analysis_error_alumni_entra_microsoft_enabled_never_used` ([`output.totals.analysis_error_alumni_entra_microsoft_enabled_never_used` / `output.totals.enabled_entra_microsoft_alumni_accounts.` as percent two decimal places]% of enabled Entra Microsoft alumni accounts)
 Error: campus account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis_error_campus_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_campus_peopleSoft_enabled_never_used` / `output.totals.enabled_peoplesoft_campus_accounts` as percent two decimal places]% of enabled PeopleSoft campus accounts)
 Error: alumni account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis_error_alumni_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_alumni_peopleSoft_enabled_never_used` / `output.totals.enabled_peoplesoft_alumni_accounts` as percent two decimal places]% of enabled PeopleSoft alumni accounts)
+
