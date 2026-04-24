@@ -5,6 +5,7 @@ You are step 12 in the workflow sequence.
 - Never derive IDs from DataFrame index.
 - Account IDs must come only from accountId column values.
 - Before writing any output.analysis list, intersect it with the valid accountId set from the mounted CSV.
+- The mounted CSV account-reconciliation.csv is prepared with unique accountId values; do not spend effort verifying duplicates.
 First, check the mounted TXT file to see if any helper scripts exist yet.
     General file processing helper scripts should be located under the heading "Generic file processing code with file read loops and filter method hooks".
     Scripts specific to step 12 should be located under the heading "Step 12".
@@ -27,4 +28,5 @@ You have 29 minutes to complete your tasks, set a timer and be aware of the time
 3. Save this list to `output.analysis.analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used`.
 4. Save the total number of accountId values in this list to `output.totals.analysis_error_campus_entra_microsoft_and_peopleSoft_enabled_never_used`.
 5. Append the `output.messages` array with the message "Error campus Entra Microsoft enabled and PeopleSoft enabled never used has been analyzed."
+
 

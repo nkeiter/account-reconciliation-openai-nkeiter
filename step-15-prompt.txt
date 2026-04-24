@@ -50,3 +50,4 @@ Error: alumni account enabled in Entra Microsoft but never used (missing Entra M
 Error: campus account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis_error_campus_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_campus_peopleSoft_enabled_never_used` / `output.totals.enabled_peoplesoft_campus_accounts` as percent two decimal places]% of enabled PeopleSoft campus accounts)
 Error: alumni account enabled in PeopleSoft but never used (missing PeopleSoft last login date): `output.totals.analysis_error_alumni_peopleSoft_enabled_never_used` ([`output.totals.analysis_error_alumni_peopleSoft_enabled_never_used` / `output.totals.enabled_peoplesoft_alumni_accounts` as percent two decimal places]% of enabled PeopleSoft alumni accounts)
 
+
