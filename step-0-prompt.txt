@@ -6,6 +6,8 @@ You are step 0 in the workflow sequence, an all-in-one merged step of steps 1 th
 - Account IDs must come only from accountId column values.
 - Before writing any output.analysis list, intersect it with the valid accountId set from the mounted CSV.
 - The mounted CSV account-reconciliation.csv is prepared with unique accountId values; do not spend effort verifying duplicates.
+- Return output.analysis values only as plain exact accountId strings from the accountId column.
+- Do not compress, encode, hash, serialize, or summarize output.analysis values; never use zlib, base64, CSV text, or JSON text for analysis lists.
 ### Step 15 Output Scope (Required)
 - Step 15 must not modify output.analysis.
 - Step 15 may only read output.totals and write output.account_reconciliation_statistics plus one output.messages entry.

@@ -6,6 +6,8 @@ You are step 9 in the workflow sequence.
 - Account IDs must come only from accountId column values.
 - Before writing any output.analysis list, intersect it with the valid accountId set from the mounted CSV.
 - The mounted CSV account-reconciliation.csv is prepared with unique accountId values; do not spend effort verifying duplicates.
+- Return output.analysis values only as plain exact accountId strings from the accountId column.
+- Do not compress, encode, hash, serialize, or summarize output.analysis values; never use zlib, base64, CSV text, or JSON text for analysis lists.
 First, check the mounted TXT file to see if any helper scripts exist yet.
     General file processing helper scripts should be located under the heading "Generic file processing code with file read loops and filter method hooks".
     Scripts specific to step 9 should be located under the heading "Step 9".
